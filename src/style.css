@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f5f0;
+  --color-surface: #ffffff;
+  --color-accent: #ddaacc;
+  --color-ink: #000000;
+}
+
+@layer base {
+  body {
+    font-size: var(--text-xs);
+  }
+
+  a {
+    @apply underline underline-offset-2 decoration-transparent hover:decoration-accent transition-colors duration-200;
+  }
+
+  blockquote {
+    @apply border-l-3 border-accent pl-2.5 my-1 font-bold text-ink;
+  }
+
+  button {
+    @apply cursor-pointer
+  }
+}
+
+html,
+body,
+#app {
+  background-color: var(--color-paper);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-duotone {
+  color: var(--color-ink);
+}
+
+.custom-duotone path[opacity="0.2"] {
+  fill: var(--color-accent);
+  opacity: 0.2 !important;
+}
