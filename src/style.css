@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Zen Old Mincho Local';
-  src: url('@/assets/fonts/ZenOldMincho-Regular.ttf') format('truetype');
+  src: url('/fonts/ZenOldMincho-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'MS PGothic';
-  src: url('@/assets/fonts/ms-pgothic-regular.ttf') format('truetype');
+  src: url('/fonts/ms-pgothic-regular.ttf') format('truetype');
   font-display: block;
 }
 
