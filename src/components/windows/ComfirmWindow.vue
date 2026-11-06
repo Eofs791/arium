@@ -20,7 +20,7 @@ const handleYes = () => {
         class="flex flex-col justify-between gap-3 w-full min-w-[240px] max-w-xs space-y-1 p-3 leading-relaxed text-ink">
         <div class="flex flex-col justify-center items-center">
             <p>确认前往</p>
-            <h1 class="text-sm font-black">{{ siteName }}</h1>
+            <h2 class="text-sm font-black">{{ siteName }}</h2>
             <p class="text-xs font-normal opacity-60">{{ href }}</p>
         </div>
 

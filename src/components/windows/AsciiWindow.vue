@@ -17,5 +17,5 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <pre class="font-['MS_PGothic','ＭＳ_Ｐゴシック',sans-serif] text-[10px] leading-[11.25px] tracking-normal">{{ frostnovaFrames[currentFrame] }}</pre>
+    <pre class="text-[10px] leading-[14px] tracking-normal">{{ frostnovaFrames[currentFrame] }}</pre>
 </template>

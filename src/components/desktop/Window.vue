@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTemplateRef } from 'vue';
 import { type WindowInstance } from '../../store/window';
-import { useDraggable } from '@vueuse/core';
+import { useDraggable, useMediaQuery } from '@vueuse/core';
 
 const props = defineProps<WindowInstance>()
 const emit = defineEmits<{
@@ -9,19 +9,20 @@ const emit = defineEmits<{
     (e: 'close', id: string): void
 }>()
 
+const isMobile = useMediaQuery('(max-width: 767px)')
+
 const window = useTemplateRef('draggable')
 const windowTitle = useTemplateRef('window-title')
 
 const { style } = useDraggable(window, {
     initialValue: { x: props.x, y: props.y },
     preventDefault: true,
-    disabled: false,
+    disabled: isMobile,
     handle: windowTitle,
     onStart: () => {
         emit('focus', props.id)
     }
 })
-
 </script>
 
 <template>
@@ -50,6 +51,16 @@ const { style } = useDraggable(window, {
 </template>
 
 <style scoped>
+@media (max-width: 767px) {
+  .window-shell {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-width: 100vw !important;
+    max-height: 80vh;
+  }
+}
+
 .window-shadow {
     transform: translate(5px, 5px);
     border: 1.5px solid var(--color-ink);

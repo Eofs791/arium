@@ -22,9 +22,9 @@ const windowStore = useWindowStore();
 const handleOpenUser = () => {
     windowStore.openWindow({
         id: 'image',
-        title: '圖像 // IMAGE',
-        x: 550,
-        y: 50,
+        title: '再会 // SAIKAI',
+        x: 0.36 * window.innerWidth,
+        y: 0.07 * window.innerHeight,
         content: markRaw(AsciiWindow)
     })
 
@@ -32,8 +32,8 @@ const handleOpenUser = () => {
         windowStore.openWindow({
             id: 'user',
             title: '用戶 // USER',
-            x: 300,
-            y: 150,
+            x: 0.2 * window.innerWidth,
+            y: 0.18 * window.innerHeight,
             content: markRaw(UserWindow)
         })
     }, 100)
@@ -43,8 +43,8 @@ const handleOpenSystem = () => {
     windowStore.openWindow({
         id: 'system',
         title: '系統 // SYSTEM',
-        x: 400,
-        y: 464,
+        x: 0.25 * window.innerWidth,
+        y: 0.62 * window.innerHeight,
         content: markRaw(SystemWindow)
     })
 }

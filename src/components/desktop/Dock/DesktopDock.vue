@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { PhCircleNotch } from '@phosphor-icons/vue';
 import DockPlayer from './DockPlayer.vue';
 import DockClock from './DockClock.vue';
 import DockerDivider from './DockerDivider.vue';
@@ -9,10 +8,7 @@ import DockerDivider from './DockerDivider.vue';
     <div
         class="dock flex items-center justify-between gap-3 w-fit h-11 border-2 border-ink bg-surface rounded-full px-3 whitespace-nowrap select-none leading-none">
         <div class="dock-brand flex items-center gap-1 shrink-0">
-            <div class="custom-duotone">
-                <PhCircleNotch :size="12" weight="duotone" />
-            </div>
-            <span class="text-sm translate-y-[-0.5px] font-semibold">DESK</span>
+            <span class="text-sm translate-y-[-0.5px] font-semibold">「机上」</span>
         </div>
 
         <DockerDivider />
