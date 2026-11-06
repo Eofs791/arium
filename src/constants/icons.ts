@@ -6,7 +6,6 @@ import {
   PhSmileySticker,
   PhGear,
   PhNotepad,
-  PhFlask,
 } from "@phosphor-icons/vue";
 import ComfirmWindow from "../components/windows/ComfirmWindow.vue";
 import AsciiWindow from "../components/windows/AsciiWindow.vue";
