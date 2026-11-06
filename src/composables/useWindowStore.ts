@@ -1,17 +1,6 @@
 import { defineStore } from "pinia";
-import { ref, type Component } from "vue";
-
-export interface WindowInstance {
-  id: string;
-  title: string;
-  width?: number;
-  height?: number;
-  x: number;
-  y: number;
-  zIndex: number;
-  content: Component;
-  props?: Record<string, any>;
-}
+import { ref } from "vue";
+import { type WindowInstance } from "../types/desktop";
 
 export const useWindowStore = defineStore("window", () => {
   const windows = ref<WindowInstance[]>([]);

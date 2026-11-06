@@ -1,96 +1,12 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, markRaw } from 'vue';
-
-// 引入桌面组件
+import { useLinkIntercepter } from '../../composables/useLinkIntercepter.ts';
+import { iconList } from '../../constants/icons.ts';
 import DesktopBackground from './DesktopBackground.vue';
 import DesktopIcon from './DesktopIcon.vue';
 import DesktopDock from './Dock/DesktopDock.vue';
-
-// 引入窗口相关组件
 import WindowManager from './WindowManager.vue';
-import { useWindowStore } from '../../store/window.ts';
-import UserWindow from '../windows/UserWindow.vue';
-import SystemWindow from '../windows/SystemWindow.vue';
-import AsciiWindow from '../windows/AsciiWindow.vue';
-import ComfirmWindow from '../windows/ComfirmWindow.vue';
 
-// 引入图标
-import { PhSmileySticker, PhGear, PhNotepad } from '@phosphor-icons/vue';
-
-const windowStore = useWindowStore();
-
-const handleOpenUser = () => {
-    windowStore.openWindow({
-        id: 'image',
-        title: '再会 // SAIKAI',
-        x: 0.36 * window.innerWidth,
-        y: 0.07 * window.innerHeight,
-        content: markRaw(AsciiWindow)
-    })
-
-    setTimeout(() => {
-        windowStore.openWindow({
-            id: 'user',
-            title: '用戶 // USER',
-            x: 0.2 * window.innerWidth,
-            y: 0.18 * window.innerHeight,
-            content: markRaw(UserWindow)
-        })
-    }, 100)
-}
-
-const handleOpenSystem = () => {
-    windowStore.openWindow({
-        id: 'system',
-        title: '系統 // SYSTEM',
-        x: 0.25 * window.innerWidth,
-        y: 0.62 * window.innerHeight,
-        content: markRaw(SystemWindow)
-    })
-}
-
-const iconList = [
-    [
-    { title: 'USER', icon: PhSmileySticker, action: handleOpenUser },
-    { title: 'SYSTEM', icon: PhGear, action: handleOpenSystem },
-    ], 
-    [
-    { title: 'BLOG ↗', icon: PhNotepad, action: 'https://blog.saikai.moe', siteName: 'Catarium' }
-    ]
-]
-
-const randomBetween = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-const handleGlobalLinkClick = (e: MouseEvent) => {
-    const anchor = (e.target as HTMLElement).closest('a')
-    if (!anchor) return
-
-    const href = anchor.href
-    const siteName = anchor.dataset.siteName || ""
-    e.preventDefault()
-
-    windowStore.openWindow({
-        id: `confirm-${href}`,
-        title: '確認 // CONFIRM',
-        x: randomBetween(window.innerWidth * 0.5, window.innerWidth * 0.8),
-        y: randomBetween(window.innerHeight * 0.2, window.innerHeight * 0.6),
-        content: markRaw(ComfirmWindow),
-        props: {
-            href: `${href}`,
-            siteName: siteName
-        }
-    })
-}
-
-onMounted(() => {
-    document.addEventListener('click', handleGlobalLinkClick)
-})
-
-onUnmounted(() => {
-    document.removeEventListener('click', handleGlobalLinkClick)
-})
+useLinkIntercepter()
 </script>
 
 <template>

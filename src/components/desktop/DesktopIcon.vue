@@ -1,14 +1,8 @@
 <script setup lang="ts">
-import { computed, type Component } from 'vue'
+import { computed } from 'vue'
+import { type DesktopIcon } from '../../types/desktop';
 
-interface DesktopIconProps {
-    title: string
-    icon: Component
-    action?: string | (() => void)
-    siteName?: string
-}
-
-const props = defineProps<DesktopIconProps>()
+const props = defineProps<DesktopIcon>()
 
 const isLink = computed(() => typeof props.action === 'string')
 

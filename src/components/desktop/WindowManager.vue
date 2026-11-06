@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useWindowStore } from '../../store/window.ts';
+import { useWindowStore } from '../../composables/useWindowStore.ts';
 import Window from './Window.vue';
 import { storeToRefs } from 'pinia';
 

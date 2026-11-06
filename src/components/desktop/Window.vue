@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTemplateRef } from 'vue';
-import { type WindowInstance } from '../../store/window';
+import { type WindowInstance } from '../../types/desktop';
 import { useDraggable, useMediaQuery } from '@vueuse/core';
 
 const props = defineProps<WindowInstance>()
