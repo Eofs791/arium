@@ -14,7 +14,7 @@ const handleClick = () => {
 </script>
 
 <template>
-    <component :is="isLink ? 'a' : 'div'" :href="isLink ? action : undefined" :target="isLink ? '_blank' : undefined" :data-site-name="siteName"
+    <component :is="isLink ? 'a' : 'div'" :href="isLink ? action : undefined"  :data-site-name="siteName"
         @click="handleClick" class="icon-item group cursor-pointer flex flex-col items-center gap-2 no-underline">
 
         <div class="icon-box-wrap relative w-14 h-14">

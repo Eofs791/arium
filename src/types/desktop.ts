@@ -18,3 +18,10 @@ export interface DesktopIcon {
     action?: string | (() => void)
     siteName?: string
 }
+
+export interface LabItem {
+  id: string,
+  title: string,
+  desc: string,
+  url: string,
+}

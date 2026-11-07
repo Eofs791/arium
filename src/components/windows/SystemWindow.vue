@@ -5,7 +5,7 @@
             <p class="text-surface text-xs">! DEVELOPING !</p>
         </div>
 
-        <div class="flex flex-col gap-4 py-3 px-3 space-y-1 text-ink">
+        <div class="flex flex-col gap-4 py-3 px-3 space-y-1">
             <p>建议使用电脑端访问，以获得最佳体验。</p>
             <div>
                 <p>灵感来源：</p>

@@ -37,7 +37,7 @@ const { style } = useDraggable(window, {
             <div ref="window-title" class="window-title cursor-grab grid grid-cols-2 items-center h-9 border-b-2">
                 <span class="mx-3 font-bold">{{ title }}</span>
                 <button
-                    class="justify-self-end mx-3 h-5.5 w-5.5 border rounded-md flex items-center justify-center font-black bg-surface text-ink hover:bg-ink hover:text-surface transition-colors duration-500"
+                    class="justify-self-end mx-3 h-5.5 w-5.5 border rounded-md flex items-center justify-center font-black bg-surface hover:bg-ink hover:text-surface transition-colors duration-500"
                     @click="$emit('close', id)">
                     <span class="translate-y-[-0.5px]">×</span>
                 </button>

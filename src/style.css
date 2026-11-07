@@ -32,13 +32,48 @@
   }
 
   blockquote {
-    @apply border-l-3 border-accent pl-2.5 my-1 font-bold text-ink;
+    @apply border-l-3 border-accent pl-2.5 my-1 font-bold;
+  }
+
+  h1 {
+    @apply text-base font-black tracking-wider
   }
 
   button {
     @apply cursor-pointer
   }
 }
+
+@layer components {
+  .btn-pill {
+    @apply rounded-full border border-solid transition-transform duration-200 ease-in-out;
+    box-shadow: 0 4px 0 rgba(34, 34, 34, 0.12);
+  }
+
+  .btn-pill:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 0 5px 0 rgba(34, 34, 34, 0.12);
+  }
+
+  .text-muted {
+    @apply font-normal opacity-60
+  }
+
+  .custom-duotone {
+    color: var(--color-ink);
+  }
+
+  .custom-duotone path[opacity="0.2"] {
+    fill: var(--color-accent);
+    opacity: 0.2 !important;
+  }
+
+  .icon-label,
+  .window-title {
+    font-family: 'Noto Sans JP', sans-serif !important;
+  }
+}
+
 
 html,
 body,
@@ -48,20 +83,6 @@ body,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.custom-duotone {
-  color: var(--color-ink);
-}
-
-.custom-duotone path[opacity="0.2"] {
-  fill: var(--color-accent);
-  opacity: 0.2 !important;
-}
-
-.icon-label,
-.window-title {
-  font-family: 'Noto Sans JP', sans-serif !important;
 }
 
 pre {
