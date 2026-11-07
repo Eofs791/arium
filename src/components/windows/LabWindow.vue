@@ -4,7 +4,7 @@ import { labList } from '../../constants/labs.ts';
 </script>
 
 <template>
-    <div class="w-max max-w-md space-y-3 p-3 leading-relaxed ">
+    <div class="w-max max-w-md space-y-3 p-3 leading-relaxed">
         <p class="text-muted">建设中……</p>
         <div class="lab-box flex flex-wrap gap-3">
             <LabItem v-for="(lab, index) in labList" v-bind="lab" :key="index" />
@@ -16,5 +16,3 @@ import { labList } from '../../constants/labs.ts';
         </div>
     </div>
 </template>
-
-<style scoped></style>

@@ -33,17 +33,17 @@ const { style } = useDraggable(window, {
 
         <div class="window-shadow absolute inset-0 pointer-events-none"></div>
 
-        <div class="window-body relative grid grid-rows-[auto_1fr] bg-surface border-2 border-ink rounded-xl">
-            <div ref="window-title" class="window-title cursor-grab grid grid-cols-2 items-center h-9 border-b-2">
+        <div class="window-body relative grid grid-rows-[auto_1fr] bg-surface border-2 border-ink rounded-xl w-full max-h-full overflow-hidden">
+            <div ref="window-title" class="window-title cursor-grab flex flex-row items-center justify-between h-9 border-b-2">
                 <span class="mx-3 font-bold">{{ title }}</span>
                 <button
-                    class="justify-self-end mx-3 h-5.5 w-5.5 border rounded-md flex items-center justify-center font-black bg-surface hover:bg-ink hover:text-surface transition-colors duration-500"
+                    class="mx-3 h-5.5 w-5.5 border rounded-md flex items-center justify-center font-black bg-surface hover:bg-ink hover:text-surface transition-colors duration-500"
                     @click="$emit('close', id)">
                     <span class="translate-y-[-0.5px]">×</span>
                 </button>
             </div>
 
-            <div class="window-content">
+            <div class="window-content flex-1 min-h-0">
                 <component :is="content" v-bind="props.props" @close="$emit('close', id)" />
             </div>
         </div>
