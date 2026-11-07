@@ -33,8 +33,8 @@ const { style } = useDraggable(window, {
 
         <div class="window-shadow absolute inset-0 pointer-events-none"></div>
 
-        <div class="window-body relative grid grid-rows-[auto_1fr] bg-surface border-2 border-ink rounded-xl w-full max-h-full overflow-hidden">
-            <div ref="window-title" class="window-title cursor-grab flex flex-row items-center justify-between h-9 border-b-2">
+        <div class="window-body relative bg-surface border-2 border-ink rounded-xl flex-col w-full max-h-full overflow-hidden">
+            <div ref="window-title" class="window-title cursor-grab w-full shrink-0 flex flex-row items-center justify-between h-9 border-b-2">
                 <span class="mx-3 font-bold">{{ title }}</span>
                 <button
                     class="mx-3 h-5.5 w-5.5 border rounded-md flex items-center justify-center font-black bg-surface hover:bg-ink hover:text-surface transition-colors duration-500"
