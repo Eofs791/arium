@@ -6,6 +6,6 @@ const formattedTime = useDateFormat(useNow(), 'HH:mm')
 
 <template>
     <div class="dock-clock flex items-center tabular-nums shrink-0 font-semibold">
-        <span>{{ formattedTime }}</span>
+        <span class="tracking-widest">{{ formattedTime }}</span>
     </div>
 </template>
