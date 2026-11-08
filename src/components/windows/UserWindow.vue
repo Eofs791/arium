@@ -10,9 +10,16 @@
 
         <div>
             <blockquote>在玩的游戏</blockquote>
-            <p>明日方舟、FGO、边狱巴士、三角洲行动、（PJSK?）</p>
+            <p>明日方舟、FGO、边狱巴士、三角洲行动、<del>PJSK</del></p>
         </div>
-        
+
+        <div>
+            <blockquote>喜欢的曲风/歌手/作曲家</blockquote>
+            <p>日摇、术</p>
+            <p>majiko、優里、ONE OK ROCK、Vaundy、Mili</p>
+            <p>Orangestar、*Luna</p>
+        </div>
+
         <div>
             <blockquote>喜欢的食物</blockquote>
             <p>日料、巧克力、泡面</p>

@@ -14,6 +14,9 @@ import UserWindow from "../components/windows/UserWindow.vue";
 import SystemWindow from "../components/windows/SystemWindow.vue";
 import LabWindow from "../components/windows/LabWindow.vue";
 
+const xCenter = window.innerWidth * 0.5;
+const yCenter = window.innerHeight * 0.5;
+
 export const handleOpenConfirm = (href: string, siteName: string) => {
   const windowStore = useWindowStore();
 
@@ -36,8 +39,8 @@ const handleOpenUser = () => {
   windowStore.openWindow({
     id: "image",
     title: "再会 // SAIKAI",
-    x: 0.36 * window.innerWidth,
-    y: 0.07 * window.innerHeight,
+    x: xCenter - 215,
+    y: yCenter - 315,
     content: markRaw(AsciiWindow),
   });
 
@@ -45,8 +48,8 @@ const handleOpenUser = () => {
     windowStore.openWindow({
       id: "user",
       title: "用戶 // USER",
-      x: 0.2 * window.innerWidth,
-      y: 0.18 * window.innerHeight,
+      x: xCenter - 460,
+      y: yCenter - 235,
       content: markRaw(UserWindow),
     });
   }, 100);
@@ -58,8 +61,8 @@ const handleOpenSystem = () => {
   windowStore.openWindow({
     id: "system",
     title: "系統 // SYSTEM",
-    x: 0.25 * window.innerWidth,
-    y: 0.62 * window.innerHeight,
+    x: xCenter + 132,
+    y: yCenter + 100,
     content: markRaw(SystemWindow),
   });
 };
@@ -70,8 +73,8 @@ const handleOpenLab = () => {
   windowStore.openWindow({
     id: "lab",
     title: "實驗室 // LAB",
-    x: 0.6 * window.innerWidth,
-    y: 0.3 * window.innerHeight,
+    x: xCenter + 82,
+    y: yCenter - 253,
     content: markRaw(LabWindow),
   });
 };
