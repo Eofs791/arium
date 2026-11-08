@@ -10,7 +10,7 @@ const emit = defineEmits<{
 }>()
 
 const handleYes = () => {
-    window.open(props.href, '_blank')
+    window.open(props.href, '_blank', 'noopener,noreferrer')
     emit('close')
 }
 </script>
